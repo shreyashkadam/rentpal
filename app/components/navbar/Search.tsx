@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import { useSearchParams } from 'next/navigation';
-import { useMemo } from 'react';
-import { BiSearch } from 'react-icons/bi';
-import { differenceInDays } from 'date-fns';
+import { useSearchParams } from "next/navigation";
+import { useMemo } from "react";
+import { BiSearch } from "react-icons/bi";
+import { differenceInDays } from "date-fns";
 
-import useSearchModal from '@/app/hooks/useSearchModal';
-import useCountries from '@/app/hooks/useCountries';
+import useSearchModal from "@/app/hooks/useSearchModal";
+import useCountries from "@/app/hooks/useCountries";
 
 const Search = () => {
   const searchModal = useSearchModal();
   const params = useSearchParams();
   const { getByValue } = useCountries();
 
-  const  locationValue = params?.get('locationValue'); 
-  const  startDate = params?.get('startDate');
-  const  endDate = params?.get('endDate');
-  const  guestCount = params?.get('guestCount');
+  const locationValue = params?.get("locationValue");
+  const startDate = params?.get("startDate");
+  const endDate = params?.get("endDate");
+  const itemCount = params?.get("itemCount");
 
   const locationLabel = useMemo(() => {
     if (locationValue) {
       return getByValue(locationValue as string)?.label;
     }
 
-    return 'Anywhere';
+    return "Anywhere";
   }, [locationValue, getByValue]);
 
   const durationLabel = useMemo(() => {
@@ -39,18 +39,18 @@ const Search = () => {
       return `${diff} Days`;
     }
 
-    return 'Any Week'
+    return "Any Week";
   }, [startDate, endDate]);
 
   const guestLabel = useMemo(() => {
-    if (guestCount) {
-      return `${guestCount} Guests`;
+    if (itemCount) {
+      return `${itemCount} Guests`;
     }
 
-    return 'Add Guests';
-  }, [guestCount]);
+    return "Add Units";
+  }, [itemCount]);
 
-  return ( 
+  return (
     <div
       onClick={searchModal.onOpen}
       className="
@@ -65,7 +65,7 @@ const Search = () => {
         cursor-pointer
       "
     >
-      <div 
+      <div
         className="
           flex 
           flex-row 
@@ -73,7 +73,7 @@ const Search = () => {
           justify-between
         "
       >
-        <div 
+        <div
           className="
             text-sm 
             font-semibold 
@@ -82,7 +82,7 @@ const Search = () => {
         >
           {locationLabel}
         </div>
-        <div 
+        <div
           className="
             hidden 
             sm:block 
@@ -96,7 +96,7 @@ const Search = () => {
         >
           {durationLabel}
         </div>
-        <div 
+        <div
           className="
             text-sm 
             pl-6 
@@ -109,7 +109,7 @@ const Search = () => {
           "
         >
           <div className="hidden sm:block">{guestLabel}</div>
-          <div 
+          <div
             className="
               p-2 
               bg-rose-500 
@@ -123,6 +123,6 @@ const Search = () => {
       </div>
     </div>
   );
-}
- 
+};
+
 export default Search;

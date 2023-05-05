@@ -1,21 +1,20 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
 import { 
-  GiBarn, 
-  GiBoatFishing, 
-  GiCactus, 
-  GiCastle, 
-  GiCaveEntrance, 
-  GiForestCamp, 
-  GiIsland,
-  GiWindmill
+  GiGamepad,
+  GiMusicalNotes,
+  GiClothes,
+  GiKitchenKnives,
+  GiWeightLiftingUp
 } from 'react-icons/gi';
-import { FaSkiing } from 'react-icons/fa';
-import { BsSnow } from 'react-icons/bs';
-import { IoDiamond } from 'react-icons/io5';
-import { MdOutlineVilla } from 'react-icons/md';
+import { MdOutlineDevicesOther} from 'react-icons/md';
+import {
+  BiParty,
+  BiCamera,
+  BiBook,
+  BiCar
+} from 'react-icons/bi'
 
 import CategoryBox from "../CategoryBox";
 import Container from '../Container';
@@ -23,80 +22,55 @@ import Container from '../Container';
 
 export const categories = [
   {
-    label: 'Beach',
-    icon: TbBeach,
-    description: 'This property is close to the beach!',
+    label: 'Party and Events',
+    icon: BiParty,
+    description: 'Barbecue, Chairs & Sofas, Decoration, Food Booths, Lighting equipment, Tables, Tents, etc.',
   },
   {
-    label: 'Windmills',
-    icon: GiWindmill,
-    description: 'This property is has windmills!',
+    label: 'Gaming',
+    icon: GiGamepad,
+    description: 'Consoles, Games, Outdoor toys, Toys, Virtual Reality, etc.',
   },
   {
-    label: 'Modern',
-    icon: MdOutlineVilla,
-    description: 'This property is modern!'
+    label: 'Photography',
+    icon: BiCamera,
+    description: ' Photography Accesories, Cameras, Lens, Batteries, Case, etc.'
   },
   {
-    label: 'Countryside',
-    icon: TbMountain,
-    description: 'This property is in the countryside!'
+    label: 'Music',
+    icon: GiMusicalNotes,
+    description: 'Music Accessories, Music Players, Musical Instruments, Sound Equipments, etc.'
   },
   {
-    label: 'Pools',
-    icon: TbPool,
-    description: 'This is property has a beautiful pool!'
+    label: 'Clothing',
+    icon: GiClothes,
+    description: "Children's Clothing, Clothing Accessories(Sunglasses, Handbags, etc.), Men's Clothing, Women's Clothing, Costumes, Footware, etc."
   },
   {
-    label: 'Islands',
-    icon: GiIsland,
-    description: 'This property is on an island!'
+    label: 'Kitchen',
+    icon: GiKitchenKnives,
+    description: 'Cookware, Cutlery, Kitchen Appliances, Tableware, Refrigerators, Microwave and Ovens, etc.'
   },
   {
-    label: 'Lake',
-    icon: GiBoatFishing,
-    description: 'This property is near a lake!'
+    label: 'Books',
+    icon: BiBook,
+    description: 'Fictional / Non-fictionl Novels, Comics, Manga, etc.'
   },
   {
-    label: 'Skiing',
-    icon: FaSkiing,
-    description: 'This property has skiing activies!'
+    label: 'Transport',
+    icon: BiCar,
+    description: 'Bicycles, Scooters, Cars, Bikes, Skates, Skateboards, etc.'
   },
   {
-    label: 'Castles',
-    icon: GiCastle,
-    description: 'This property is an ancient castle!'
+    label: 'Electronics',
+    icon: MdOutlineDevicesOther,
+    description: 'Computers, Grooming appliances, Laptops, Storage Devices, Mouse, Keyboard, Phones, Cables and accessories, etc.'
   },
   {
-    label: 'Caves',
-    icon: GiCaveEntrance,
-    description: 'This property is in a spooky cave!'
+    label: 'Fitness',
+    icon: GiWeightLiftingUp,
+    description: 'Gym Equipments, Massage chairs, Steamer, etc.'
   },
-  {
-    label: 'Camping',
-    icon: GiForestCamp,
-    description: 'This property offers camping activities!'
-  },
-  {
-    label: 'Arctic',
-    icon: BsSnow,
-    description: 'This property is in arctic environment!'
-  },
-  {
-    label: 'Desert',
-    icon: GiCactus,
-    description: 'This property is in the desert!'
-  },
-  {
-    label: 'Barns',
-    icon: GiBarn,
-    description: 'This property is in a barn!'
-  },
-  {
-    label: 'Lux',
-    icon: IoDiamond,
-    description: 'This property is brand new and luxurious!'
-  }
 ]
 
 const Categories = () => {

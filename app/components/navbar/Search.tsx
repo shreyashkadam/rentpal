@@ -42,9 +42,9 @@ const Search = () => {
     return "Any Week";
   }, [startDate, endDate]);
 
-  const guestLabel = useMemo(() => {
+  const itemLabel = useMemo(() => {
     if (itemCount) {
-      return `${itemCount} Guests`;
+      return `${itemCount} Units`;
     }
 
     return "Add Units";
@@ -108,7 +108,7 @@ const Search = () => {
             gap-3
           "
         >
-          <div className="hidden sm:block">{guestLabel}</div>
+          <div className="hidden sm:block">{itemLabel}</div>
           <div
             className="
               p-2 

@@ -64,7 +64,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
             text-neutral-500
           "
         >
-          <div>{itemCount} guests</div>
+          <div>{itemCount} units</div>
         </div>
       </div>
       <hr />

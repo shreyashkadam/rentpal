@@ -29,7 +29,8 @@ export default async function getReservations(
     const reservations = await prisma.reservation.findMany({
       where: query,
       include: {
-        listing: true
+        listing: true,
+        user: true
       },
       orderBy: {
         createdAt: 'desc'
@@ -46,6 +47,11 @@ export default async function getReservations(
         ...reservation.listing,
         createdAt: reservation.listing.createdAt.toISOString(),
       },
+      user: {
+        ...reservation.user,
+        createdAt: reservation.user.createdAt.toISOString(),
+        updatedAt: reservation.user.updatedAt.toISOString(),
+      }
     }));
 
     return safeReservations;

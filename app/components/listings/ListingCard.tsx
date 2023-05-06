@@ -11,9 +11,11 @@ import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import HeartButton from "../HeartButton";
 import Button from "../Button";
 import ClientOnly from "../ClientOnly";
+import Avatar from "../Avatar";
 
 interface ListingCardProps {
   data: SafeListing;
+  userData?: SafeUser | null;
   reservation?: SafeReservation;
   onAction?: (id: string) => void;
   disabled?: boolean;
@@ -24,6 +26,7 @@ interface ListingCardProps {
 
 const ListingCard: React.FC<ListingCardProps> = ({
   data,
+  userData,
   reservation,
   onAction,
   disabled,
@@ -113,6 +116,23 @@ const ListingCard: React.FC<ListingCardProps> = ({
             </>
           )}
         </div>
+        {reservation && (
+          <>
+            <div
+              className="
+            flex 
+            flex-row 
+            items-center
+            gap-2
+            text-neutral-500
+          "
+            >
+              <div>Booked by {userData?.name}</div>
+              <Avatar src={userData?.image} />
+            </div>
+          </>
+        )}
+
         <div className="flex flex-row items-center gap-1">
           <div className="font-semibold">$ {price}</div>
           {!reservation && <div className="font-light">day</div>}

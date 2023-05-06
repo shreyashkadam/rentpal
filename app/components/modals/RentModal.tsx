@@ -30,7 +30,7 @@ enum STEPS {
 const RentModal = () => {
   const router = useRouter();
   const rentModal = useRentModal();
-
+  const [description, setDescription] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [step, setStep] = useState(STEPS.CATEGORY);
 
@@ -124,10 +124,18 @@ const RentModal = () => {
 
   let bodyContent = (
     <div className="flex flex-col gap-8">
-      <Heading
-        title="Which of these best describes your item?"
-        subtitle="Pick a category"
-      />
+      {description == "" ? (
+        <Heading
+          title="Which of these best describes your item?"
+          subtitle="Pick one category"
+        />
+      ) : (
+        <Heading
+          title="Which of these best describes your item?"
+          subtitle={description}
+        />
+      )}
+
       <div
         className="
           grid 
@@ -141,7 +149,10 @@ const RentModal = () => {
         {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
-              onClick={(category) => setCustomValue("category", category)}
+              onClick={(category) => {
+                setCustomValue("category", category);
+                setDescription(item.description);
+              }}
               selected={category === item.label}
               label={item.label}
               icon={item.icon}

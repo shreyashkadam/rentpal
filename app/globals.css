@@ -8,6 +8,15 @@ body,
   height: 100%;
 }
 
+html {
+  background: #000;
+  filter: invert(1) hue-rotate(180deg)
+}
+
+html img {
+  filter: invert(1) hue-rotate(180deg)
+}
+
 .leaflet-bottom,
 .leaflet-control,
 .leaflet-pane,

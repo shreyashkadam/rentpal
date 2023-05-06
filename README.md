@@ -68,12 +68,9 @@ This web application is perfect for those looking to rent a tool for a DIY proje
     </li>
     <li>
       <a href="#features">Features</a>
-      <ul>
-        <li><a href="#user-role">User Role</a></li>
-        <li><a href="#admin-role">Admin Role</a></li>
-      </ul>
     </li>
     <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#special-thanks">Special Thanks</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -115,42 +112,41 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-## Cloning the repository
+1. Cloning the repository
 
-```shell
-git clone https://github.com/shreyashkadam/rentpal.git
-```
+  ```shell
+  git clone https://github.com/shreyashkadam/rentpal.git
+  ```
 
-## Install packages
+2. Install packages
 
-```shell
-npm i
-```
+  ```shell
+  npm i
+  ```
 
-## Setup .env file
+3. Setup .env file
 
+  ```js
+  DATABASE_URL=
+  GOOGLE_CLIENT_ID=
+  GOOGLE_CLIENT_SECRET=
+  GITHUB_ID=
+  GITHUB_SECRET=
+  NEXTAUTH_SECRET=
+  ```
 
-```js
-DATABASE_URL=
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-GITHUB_ID=
-GITHUB_SECRET=
-NEXTAUTH_SECRET=
-```
+4. Setup Prisma
 
-## Setup Prisma
+  ```shell
+  npx prisma db push
 
-```shell
-npx prisma db push
+  ```
 
-```
+5. Start the app
 
-## Start the app
-
-```shell
-npm run dev
-```
+  ```shell
+  npm run dev
+  ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

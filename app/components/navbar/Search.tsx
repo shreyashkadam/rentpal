@@ -54,13 +54,13 @@ const Search = () => {
     <div
       onClick={searchModal.onOpen}
       className="
-        border-[1px] 
+        border-[2px] 
         w-full 
         md:w-auto 
         py-2 
         rounded-full 
-        shadow-sm 
-        hover:shadow-md 
+        shadow-md 
+        hover:shadow-lg
         transition 
         cursor-pointer
       "

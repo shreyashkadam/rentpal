@@ -54,6 +54,8 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
             hover:bg-neutral-100 
             transition 
             cursor-pointer
+            border-[1px] 
+            shadow-md
           "
         >
           Rent your stuff
@@ -68,11 +70,13 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           border-neutral-200 
           flex 
           flex-row 
-          items-center 
+          items-center
+          hover:bg-neutral-100  
           gap-3 
           rounded-full 
-          cursor-pointer 
-          hover:shadow-md 
+          cursor-pointer
+          shadow-md 
+          hover:shadow-lg 
           transition
           "
         >

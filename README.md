@@ -118,7 +118,7 @@ To get a local copy up and running follow these simple steps.
 ## Cloning the repository
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next13-airbnb-clone.git
+git clone https://github.com/shreyashkadam/rentpal.git
 ```
 
 ## Install packages
@@ -198,6 +198,9 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTACT -->
+
+## Special Thanks
+Special Thanks to <a href="https://www.youtube.com/@codewithantonio">Code with Antonio</a> for his outstanding<a href="https://www.youtube.com/watch?v=c_-b_isI4vg">tutorial video</a> on making a airbnb clone. This project has been referenced and greatly inspired by his work in the mentioned tutorial
 
 ## Contact
 

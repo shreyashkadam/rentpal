@@ -51,6 +51,7 @@ export default async function getReservations(
         ...reservation.user,
         createdAt: reservation.user.createdAt.toISOString(),
         updatedAt: reservation.user.updatedAt.toISOString(),
+        emailVerified: reservation.user.emailVerified?.toISOString() || null,
       }
     }));
 

@@ -11,6 +11,7 @@ import ToasterProvider from '@/app/providers/ToasterProvider';
 import './globals.css'
 import ClientOnly from './components/ClientOnly';
 import getCurrentUser from './actions/getCurrentUser';
+import Footer from '@/app/components/footer/footer';
 
 export const metadata = {
   title: 'Rentpal',
@@ -38,10 +39,13 @@ export default async function RootLayout({
           <SearchModal />
           <RentModal />
           <Navbar currentUser={currentUser} />
+          
+          
         </ClientOnly>
         <div className="pb-20 pt-28">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   )
